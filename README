@@ -1,0 +1,15 @@
+This script reads a subrip subtitles file (a.k.a. a .srt file) and offsets the
+timings in the file by a specified amount. Some media players provide this 
+facility already, but some do not, so I thought it would be a useful tool to
+develop.
+
+Usage:
+python fix_subtitles_timings.py <seconds_offset> <subtitles_file>
+
+Examples:
+python fix_subtitles_timings.py +5 film.srt     #  offset by +5 seconds
+python fix_subtitles_timings.py -15 film.srt     #  offset by -15 seconds
+
+seconds_offset can be a positive or a negative value
+subtitles_file must be in the subrip format. It shouldn't be too hard to 
+rewrite to accomodate other formats. 
