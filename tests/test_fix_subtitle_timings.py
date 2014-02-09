@@ -38,10 +38,11 @@ class TestOffsetTimings(unittest2.TestCase):
         input_file = os.path.join(tests_dir, 'data', 'sample.srt') 
         offset = timedelta(seconds=3)
         g = fix_subtitles_timings.offset_timings(input_file, offset)
+        actual = []
         for i, line in enumerate(g):
-            line = line.strip()
-            self.assertEqual(line, expected[i])
+            actual.append(line.strip())
 
+        self.assertEqual(actual, expected)
 
 if __name__ == "__main__":
     unittest2.main()
